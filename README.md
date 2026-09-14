@@ -35,6 +35,11 @@ guia-fetch-01/
 │   └── styles.css
 ├── js/
 │   └── app.js
+├── capturas/
+│   ├── escritorio.jpg
+│   ├── escritorio busqueda.jpg
+│   ├── tableta.jpg
+│   └── movil.jpg
 └── README.md
 ```
 
@@ -49,4 +54,18 @@ Se necesita conexión a Internet para consultar la API.
 
 ## Evidencia visual
 
-Agregar aquí una captura de la aplicación funcionando en escritorio y otra en vista móvil.
+### Vista de escritorio
+
+![Directorio Web en escritorio](capturas/escritorio.jpg)
+
+### Búsqueda de usuarios
+
+![Búsqueda de usuarios](capturas/escritorio%20busqueda.jpg)
+
+### Vista de tableta
+
+![Directorio Web en tableta](capturas/tableta.jpg)
+
+### Vista móvil
+
+![Directorio Web en móvil](capturas/movil.jpg)
