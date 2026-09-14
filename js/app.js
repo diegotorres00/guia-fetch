@@ -1,6 +1,7 @@
 const contenedor = document.querySelector("#contenedorUsuarios");
 const mensaje = document.querySelector("#mensaje");
 const buscar = document.querySelector("#buscar");
+const limpiar = document.querySelector("#limpiar");
 const urlUsuarios = "https://jsonplaceholder.typicode.com/users";
 let usuariosGlobales = [];
 
@@ -59,6 +60,12 @@ buscar.addEventListener("input", () => {
 	mensaje.textContent = filtrados.length === 0
 		? "No se encontraron usuarios."
 		: `${filtrados.length} usuario(s) encontrado(s).`;
+});
+
+limpiar.addEventListener("click", () => {
+	buscar.value = "";
+	buscar.dispatchEvent(new Event("input"));
+	buscar.focus();
 });
 
 cargarUsuarios();

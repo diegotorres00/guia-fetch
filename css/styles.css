@@ -74,6 +74,22 @@ input:focus {
 	border-color: #276782;
 }
 
+button {
+	width: fit-content;
+	padding: 10px 16px;
+	color: #ffffff;
+	background: #276782;
+	border: 0;
+	border-radius: 4px;
+	font: inherit;
+	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	background: #173b57;
+}
+
 #mensaje {
 	min-height: 24px;
 	color: #526572;
