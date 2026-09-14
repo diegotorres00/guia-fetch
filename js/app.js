@@ -1,6 +1,8 @@
 const contenedor = document.querySelector("#contenedorUsuarios");
 const mensaje = document.querySelector("#mensaje");
+const buscar = document.querySelector("#buscar");
 const urlUsuarios = "https://jsonplaceholder.typicode.com/users";
+let usuariosGlobales = [];
 
 function mostrarUsuarios(usuarios) {
 	contenedor.innerHTML = "";
@@ -32,12 +34,31 @@ async function cargarUsuarios() {
 		}
 
 		const usuarios = await response.json();
-		mostrarUsuarios(usuarios);
-		mensaje.textContent = `${usuarios.length} usuarios cargados.`;
+		usuariosGlobales = usuarios.sort((a, b) => a.name.localeCompare(b.name));
+		mostrarUsuarios(usuariosGlobales);
+		mensaje.textContent = `${usuariosGlobales.length} usuarios cargados.`;
 	} catch (error) {
 		mensaje.textContent = "No fue posible cargar la información.";
 		console.error(error);
 	}
 }
+
+buscar.addEventListener("input", () => {
+	const texto = buscar.value.trim().toLowerCase();
+	const filtrados = usuariosGlobales.filter(usuario => {
+		const datosUsuario = [
+			usuario.name,
+			usuario.email,
+			usuario.address.city
+		].join(" ").toLowerCase();
+
+		return datosUsuario.includes(texto);
+	});
+
+	mostrarUsuarios(filtrados);
+	mensaje.textContent = filtrados.length === 0
+		? "No se encontraron usuarios."
+		: `${filtrados.length} usuario(s) encontrado(s).`;
+});
 
 cargarUsuarios();
