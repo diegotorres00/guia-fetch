@@ -109,3 +109,34 @@ footer {
 footer p {
 	margin: 0;
 }
+
+@media (max-width: 900px) {
+	.contenedor-usuarios {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	header,
+	footer {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	nav ul {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	main {
+		padding: 28px 16px;
+	}
+
+	.contenedor-usuarios {
+		grid-template-columns: 1fr;
+	}
+
+	.tarjeta {
+		min-width: 0;
+	}
+}
